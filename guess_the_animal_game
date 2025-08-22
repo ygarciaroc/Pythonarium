@@ -1,0 +1,26 @@
+import random
+
+def guess_the_animal():
+    animals = ["dog", "cat", "lion", "tiger", "elephant", 
+               "giraffe", "zebra", "monkey", "rabbit", "bear"]
+
+    chosen_animal = random.choice(animals)
+    attempts = 0
+
+    print("🐾 Welcome to Guess the Animal Game!")
+    print("I’m thinking of an animal... Can you guess which one?")
+    print("Hint: It's one of these:", ", ".join(animals))
+
+    while True:
+        guess = input("Your guess: ").lower()
+        attempts += 1
+
+        if guess == chosen_animal:
+            print(f"🎉 Correct! The animal was '{chosen_animal}'.")
+            print(f"You guessed it in {attempts} attempts.")
+            break
+        else:
+            print("❌ Nope, try again!")
+
+if __name__ == "__main__":
+    guess_the_animal()
